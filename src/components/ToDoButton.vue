@@ -1,5 +1,5 @@
 <template>
-    <button @click="action.call()">{{text}}</button>
+    <button :class="`button-${this.btnStyle}`" @click="action.call()">{{text}}</button>
 </template>
 
 <script>
@@ -12,6 +12,10 @@ export default {
     action: {
       type: Function,
       required: true
+    },
+    btnStyle: {
+      type: String,
+      default: 'primary'
     }
   }
 }
