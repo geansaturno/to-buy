@@ -4,20 +4,20 @@
 
 <script>
 export default {
-  props: {
-    text: {
-      type: String,
-      required: true
-    },
-    action: {
-      type: Function,
-      required: true
-    },
-    btnStyle: {
-      type: String,
-      default: 'primary'
+    props: {
+        text: {
+            type: String,
+            required: true
+        },
+        action: {
+            type: Function,
+            required: true
+        },
+        btnStyle: {
+            type: String,
+            default: 'primary'
+        }
     }
-  }
 }
 
 </script>
