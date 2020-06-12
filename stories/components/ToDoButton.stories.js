@@ -9,7 +9,7 @@ export default {
 export const DefaultButton = () => {
     return {
         components: { ToDoButton },
-        template: '<to-do-button :text="\'Enviar\'" :action="action"/>',
+        template: '<to-do-button :text="\'Enviar\'" @click="action"/>',
         methods: {
             action: action('clicked')
         }
