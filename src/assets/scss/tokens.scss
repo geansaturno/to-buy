@@ -1,0 +1,15 @@
+$color-primary: green;
+$color-secondary: blue;
+
+$border-radius: 5px;
+$border-width: 2px;
+
+
+@mixin lightBorderRadius {
+    border-radius: ($border-radius - 2);
+}
+
+@mixin lightBorders {
+    border-width: ($border-width - 1);
+    border-style: solid;
+}
