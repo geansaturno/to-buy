@@ -1,7 +1,6 @@
 import ToDoButton from '@/components/ToDoButton.vue'
 import { shallowMount } from '@vue/test-utils'
 import { expect } from 'chai'
-import { fake } from 'sinon'
 
 function defaultButtomFactory (text) {
     return shallowMount(ToDoButton, {
@@ -44,7 +43,6 @@ describe('ToDoButton', () => {
             const cp = shallowMount(ToDoButton, {
                 propsData: {
                     text: 'Enviar',
-                    action: fake(),
                     btnStyle: 'danger'
                 }
             })
