@@ -23,12 +23,18 @@ export default {
 
 .button {
     padding: 10px 30px;
+    color: tokens.$light-color;
+    @include tokens.lightBorderRadius;
+    @include tokens.lightBorders;
 
     &-primary {
-        @include tokens.lightBorderRadius;
-        @include tokens.lightBorders;
         background-color: lighten(tokens.$color-primary, 10%);
         border-color: tokens.$color-primary;
+    }
+
+    &-danger {
+        background-color: lighten(tokens.$color-danger, 10%);
+        border-color: darken(tokens.$color-danger, 10%);
     }
 }
 </style>

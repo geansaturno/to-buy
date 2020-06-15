@@ -1,5 +1,10 @@
+@use './colors.scss' as colors;
+
 $color-primary: green;
 $color-secondary: blue;
+$color-danger: red;
+
+$light-color: colors.$g1;
 
 $border-radius: 5px;
 $border-width: 2px;
