@@ -1,9 +1,9 @@
-import ToDoButton from '@/components/ToDoButton.vue'
+import ToBuyButton from '@/components/ToBuyButton.vue'
 import { shallowMount } from '@vue/test-utils'
 import { expect } from 'chai'
 
 function defaultButtomFactory (text) {
-    return shallowMount(ToDoButton, {
+    return shallowMount(ToBuyButton, {
         propsData: {
             text
         }
@@ -40,7 +40,7 @@ describe('ToDoButton', () => {
 
     describe('Botão de perigo', () => {
         it('Deve ter a classe button-danger', () => {
-            const cp = shallowMount(ToDoButton, {
+            const cp = shallowMount(ToBuyButton, {
                 propsData: {
                     text: 'Enviar',
                     btnStyle: 'danger'
