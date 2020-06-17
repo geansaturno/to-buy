@@ -1,18 +1,28 @@
 <template>
-    <button :class="`button-${this.btnStyle}`" class="button" @click="$emit('click')">{{text}}</button>
+    <button :class="`button-${this.btnStyle} ${icon ? 'button-icon' : ''}`" class="button" @click="$emit('click')">
+        {{text}}
+        <i v-if="icon" :data-feather="icon" />
+    </button>
 </template>
 
 <script>
+import feather from 'feather-icons'
+
 export default {
     props: {
         text: {
-            type: String,
-            required: true
+            type: String
         },
         btnStyle: {
             type: String,
             default: 'primary'
+        },
+        icon: {
+            type: String
         }
+    },
+    mounted () {
+        feather.replace()
     }
 }
 
@@ -26,6 +36,11 @@ export default {
     color: tokens.$light-color;
     @include tokens.lightBorderRadius;
     @include tokens.lightBorders;
+
+    &-icon {
+        padding: 10px 13px;
+        border-radius: 50%;
+    }
 
     &-primary {
         background-color: lighten(tokens.$color-primary, 10%);

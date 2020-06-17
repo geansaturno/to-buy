@@ -50,4 +50,34 @@ describe('ToDoButton', () => {
             expect(cp.classes()).to.include('button-danger')
         })
     })
+
+    describe('Botão com icone', () => {
+        it('Deve ter a classe button-icon', () => {
+            const cp = shallowMount(ToBuyButton, {
+                propsData: {
+                    icon: 'cast'
+                }
+            })
+
+            expect(cp.classes()).to.include('button-icon')
+        })
+        it('Deve ter o icone de cast', () => {
+            const cp = shallowMount(ToBuyButton, {
+                propsData: {
+                    icon: 'cast'
+                }
+            })
+
+            expect(cp.get('[data-feather="cast"]')).to.be.ok
+        })
+        it('Deve ter o icone de lixeira', () => {
+            const cp = shallowMount(ToBuyButton, {
+                propsData: {
+                    icon: 'trash-2'
+                }
+            })
+
+            expect(cp.get('[data-feather="trash-2"]'))
+        })
+    })
 })

@@ -37,3 +37,19 @@ export const WithTheme = () => ({
         action: action('clicked')
     }
 })
+
+export const WithIcon = () => ({
+    components: { ToBuyButton },
+    template: '<to-buy-button :icon="btnIcon" @click="action" :btnStyle="btnStyle"/>',
+    props: {
+        btnIcon: {
+            default: 'battery'
+        },
+        btnStyle: {
+            default: select('Tema', ['primary', 'danger'], 'primary')
+        }
+    },
+    methods: {
+        action: action('clicked')
+    }
+})
