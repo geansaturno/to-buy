@@ -35,7 +35,7 @@ export default {
     padding: 10px 30px;
     color: tokens.$light-color;
     @include tokens.lightBorderRadius;
-    @include tokens.lightBorders;
+    border: tokens.$lightBorder;
 
     &-icon {
         padding: 10px 13px;
