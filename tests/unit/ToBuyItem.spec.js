@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils'
 import ToBuyItem from '@/components/ToBuyItem.vue'
-import { expect } from 'chai'
 
 const toDoItemFactory = (name) => {
     return mount(ToBuyItem, {
@@ -15,19 +14,19 @@ describe('ToDoItem', () => {
         const itemName = 'Laranja'
         const cp = toDoItemFactory(itemName)
 
-        expect(cp.find('.to-buy-item-name').text()).to.be.equal(itemName)
+        expect(cp.find('.to-buy-item-name').text()).toBe(itemName)
     })
 
     it('Deve ter o botão para confirmar compra', () => {
         const cp = toDoItemFactory('Laranja')
 
-        expect(cp.find('.to-buy-item-shoping .button')).to.be.ok
+        expect(cp.find('.to-buy-item-shoping .button')).toBeTruthy()
     })
 
     it('Deve ter o botão para remover da lista', () => {
         const cp = toDoItemFactory('Maça')
 
-        expect(cp.get('.to-buy-item-remove .button')).to.be.ok
+        expect(cp.get('.to-buy-item-remove .button')).toBeTruthy()
     })
 
     describe('Ação de compra', () => {
@@ -36,7 +35,7 @@ describe('ToDoItem', () => {
 
             cp.get('.to-buy-item-shoping .button').trigger('click')
 
-            expect(cp.emitted('shop')).to.be.ok
+            expect(cp.emitted('shop')).toBeTruthy()
         })
     })
     describe('Ação de remoção', () => {
@@ -45,7 +44,7 @@ describe('ToDoItem', () => {
 
             cp.get('.to-buy-item-remove .button').trigger('click')
 
-            expect(cp.emitted('remove')).to.be.ok
+            expect(cp.emitted('remove')).toBeTruthy()
         })
     })
 })

@@ -1,6 +1,5 @@
 import ToBuyButton from '@/components/ToBuyButton.vue'
 import { shallowMount } from '@vue/test-utils'
-import { expect } from 'chai'
 
 function defaultButtomFactory (text) {
     return shallowMount(ToBuyButton, {
@@ -15,12 +14,12 @@ describe('ToDoButton', () => {
         it('Deve ser um botão', () => {
             const cp = defaultButtomFactory('Fechar')
 
-            expect(cp.element.tagName.toLocaleLowerCase()).to.be.equal('button')
+            expect(cp.element.tagName.toLocaleLowerCase()).toBe('button')
         })
 
         it('Deve ter o texto "Clique Aqui"', () => {
             const cp = defaultButtomFactory('Clique Aqui')
-            expect(cp.text()).to.be.equal('Clique Aqui')
+            expect(cp.text()).toBe('Clique Aqui')
         })
 
         it('Deve emitir o evendo de clique quando for clicado', () => {
@@ -28,13 +27,13 @@ describe('ToDoButton', () => {
 
             cp.trigger('click')
 
-            expect(cp.emitted().click).to.be.ok
+            expect(cp.emitted().click).toBeTruthy()
         })
 
         it('Deve ter a classe button-primary', () => {
             const cp = defaultButtomFactory('Enviar')
 
-            expect(cp.classes()).to.include('button-primary')
+            expect(cp.classes()).toContain('button-primary')
         })
     })
 
@@ -47,7 +46,7 @@ describe('ToDoButton', () => {
                 }
             })
 
-            expect(cp.classes()).to.include('button-danger')
+            expect(cp.classes()).toContain('button-danger')
         })
     })
 
@@ -59,7 +58,7 @@ describe('ToDoButton', () => {
                 }
             })
 
-            expect(cp.classes()).to.include('button-icon')
+            expect(cp.classes()).toContain('button-icon')
         })
         it('Deve ter o icone de cast', () => {
             const cp = shallowMount(ToBuyButton, {
@@ -68,7 +67,7 @@ describe('ToDoButton', () => {
                 }
             })
 
-            expect(cp.get('[data-feather="cast"]')).to.be.ok
+            expect(cp.get('[data-feather="cast"]')).toBeTruthy()
         })
         it('Deve ter o icone de lixeira', () => {
             const cp = shallowMount(ToBuyButton, {
