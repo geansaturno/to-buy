@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ToBuyButtom from '@/components/ToBuyButton.vue'
+import ToBuyButtom from '@/components/ToBuyButton/ToBuyButton.vue'
 
 export default {
     props: {

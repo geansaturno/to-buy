@@ -1,4 +1,4 @@
-import ToBuyButton from '@/components/ToBuyButton.vue'
+import ToBuyButton from './ToBuyButton.vue'
 import { shallowMount } from '@vue/test-utils'
 
 function defaultButtomFactory (text) {

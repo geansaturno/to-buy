@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import ToBuyItem from '@/components/ToBuyItem.vue'
+import ToBuyItem from './ToBuyItem.vue'
 
 const toDoItemFactory = (name) => {
     return mount(ToBuyItem, {
